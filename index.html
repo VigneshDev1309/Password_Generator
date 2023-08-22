@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <input type="text" name="textField" id="textField" readonly onclick="clipboardCopy()">
+        <div class="folder">
+            <input type="checkbox" name="lowerCase" checked="checked" id="lowerCase">
+            <label for="lowerCase">Lowercase [ a - z ]</label>
+        </div>
+        <div class="folder">
+            <input type="checkbox" name="upperCase" checked="checked" id="upperCase">
+            <label for="upperCase">Uppercase [ A - Z ]</label>
+        </div>
+        <div class="folder">
+            <input type="checkbox" name="numeric" id="numeric" checked="checked">
+            <label for="numeric">Numeric [ 0 - 9 ]</label>
+        </div>
+        <div class="folder">
+            <input type="checkbox" name="symbols" id="symbols">
+            <label for="symbols">Symbols [ !, @, #, ... ]</label>    
+        </div>
+        <input type="range" name="rangeBar" id="rangeBar" value="20" max="100" oninput="rangeValueChange()">
+        <label class="outLabel">LENGTH = <span id="lengthValue" style="color: yellow">20</span></label>
+        <label class="outLabel">STRENGTH = <span id="passStrength"></span></label>
+        <button onclick="generate_pass()">GENERATE</button>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
